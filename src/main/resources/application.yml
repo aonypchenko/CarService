@@ -6,3 +6,8 @@ server:
 spring:
   application:
     name: CarService
+  datasource:
+    url: jdbc:postgresql://localhost:5432/education
+    username: postgres
+    password: admin
+
