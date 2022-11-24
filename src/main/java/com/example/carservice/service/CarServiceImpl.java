@@ -9,8 +9,14 @@ import java.util.List;
 @Service
 public class CarServiceImpl implements CarService {
 
+    private final CarRepository repository;
+
+    public CarServiceImpl(CarRepository repository) {
+        this.repository = repository;
+    }
+
     @Override
     public List<Car> getCars() {
-        return CarRepository.cars;
+        return repository.findAll();
     }
 }

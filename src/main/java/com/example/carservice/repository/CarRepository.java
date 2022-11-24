@@ -1,13 +1,11 @@
 package com.example.carservice.repository;
 
 import com.example.carservice.model.Car;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface CarRepository {
+public interface CarRepository extends JpaRepository<Car, Long> {
 
-    List<Car> cars = List.of(
-            new Car("Hyundai Sonata", 12000),
-            new Car("BMW 540i", 54000)
-    );
+    List<Car> findAll();
 }

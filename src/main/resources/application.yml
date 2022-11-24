@@ -10,4 +10,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/education
     username: postgres
     password: admin
-
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
