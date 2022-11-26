@@ -27,4 +27,9 @@ public class CarController {
         return service.getCars();
     }
 
+    @PostMapping("add")
+    public Car addNewCar(){
+        return service.addCar();
+    }
+
 }
