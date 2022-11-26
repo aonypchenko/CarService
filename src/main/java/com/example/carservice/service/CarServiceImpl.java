@@ -22,18 +22,4 @@ public class CarServiceImpl implements CarService {
         return carRepository.findAll();
     }
 
-    @Override
-    public Car addCar(){
-        Car newCar = new Car();
-        newCar.setModel("BMW 328i");
-        newCar.setColor("black");
-        newCar.setPrice(15000);
-        newCar.setEngine(EngineType.GASOLINE);
-        newCar.setPower(245);
-        newCar.setEngineVolume(2.0);
-        newCar.setIssueDate(LocalDate.ofEpochDay(2022-11-24));
-        carRepository.save(newCar);
-        return null;
-    }
-
 }
