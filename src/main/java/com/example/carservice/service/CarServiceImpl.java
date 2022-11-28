@@ -21,5 +21,13 @@ public class CarServiceImpl implements CarService {
     public List<Car> getCars() {
         return carRepository.findAll();
     }
+    @Override
+    public Car updPatch(Car updCar){
+        String model=updCar.getModel();
+        Car carUpd=carRepository.findCarByModel(model);
+        carUpd.setPower(100);
+        carRepository.save(carUpd);
+        return null;
+    }
 
 }
