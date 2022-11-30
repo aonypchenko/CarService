@@ -18,8 +18,9 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> getCars() {
-        return carRepository.findAll();
+    public Car getCars(Long id) {
+        Car car=carRepository.findCarById(id);
+        return car;
     }
 
 }
