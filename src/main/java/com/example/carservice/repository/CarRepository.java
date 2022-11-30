@@ -9,4 +9,5 @@ public interface CarRepository extends JpaRepository<Car, Long> {
 
     List<Car> findAll();
 
+    void deleteCarById(Long id);
 }

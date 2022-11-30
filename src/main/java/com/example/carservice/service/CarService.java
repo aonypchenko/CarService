@@ -8,4 +8,5 @@ public interface CarService {
 
     List<Car> getCars();
 
+    void removeById(Long id);
 }
