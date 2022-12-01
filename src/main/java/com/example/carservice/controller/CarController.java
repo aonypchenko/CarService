@@ -12,20 +12,18 @@ import java.util.List;
 public class CarController {
 
     private final CarService service;
-    private final CarRepository carRepository;
 
     public CarController(CarService service, CarRepository carRepository) {
         this.service = service;
-        this.carRepository = carRepository;
     }
 
     @GetMapping
     public List<Car> getCars() {
-        return service.getCars();
+        return service.getAll();
     }
 
-    @PutMapping("update")
-    public Car updateCars(){
-        return service.updateCar();
+    @PutMapping
+    public Car updateCars() {
+        return service.update();
     }
 }

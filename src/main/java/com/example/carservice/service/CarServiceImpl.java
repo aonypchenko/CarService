@@ -10,23 +10,27 @@ import java.util.List;
 public class CarServiceImpl implements CarService {
 
     private final CarRepository repository;
-    private final CarRepository carRepository;
+
 
     public CarServiceImpl(CarRepository repository, CarRepository carRepository) {
         this.repository = repository;
-        this.carRepository = carRepository;
+    }
+
+    public Car findCarByModel() {
+        Car carToUpdate = repository.findCarByModel("IS-250");
+        return carToUpdate;
     }
 
     @Override
-    public List<Car> getCars() {
+    public List<Car> getAll() {
         return repository.findAll();
     }
 
     @Override
-    public Car updateCar(){
-        Car carToUpdate= carRepository.findCarByModel("IS-250");
-        carToUpdate.setColor("new color");
-        carRepository.save(carToUpdate);
-        return null;
+    public Car update() {
+        Car carToUpdate = findCarByModel();
+        carToUpdate.setColor("black");
+        repository.save(carToUpdate);
+        return carToUpdate;
     }
 }
