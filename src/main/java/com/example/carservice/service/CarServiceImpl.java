@@ -11,14 +11,12 @@ public class CarServiceImpl implements CarService {
 
     private final CarRepository repository;
 
-
-    public CarServiceImpl(CarRepository repository, CarRepository carRepository) {
+    public CarServiceImpl(CarRepository repository) {
         this.repository = repository;
     }
 
-    public Car findCarByModel() {
-        Car carToUpdate = repository.findCarByModel("IS-250");
-        return carToUpdate;
+    private Car findCarByModel() {
+        return repository.findCarByModel("IS-250");
     }
 
     @Override
@@ -30,7 +28,6 @@ public class CarServiceImpl implements CarService {
     public Car update() {
         Car carToUpdate = findCarByModel();
         carToUpdate.setColor("black");
-        repository.save(carToUpdate);
-        return carToUpdate;
+        return repository.save(carToUpdate);
     }
 }
