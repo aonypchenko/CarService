@@ -1,7 +1,7 @@
 server:
   port: 8080
   servlet:
-    context-path: /car-service
+    context-path: /api
 
 spring:
   application:
@@ -10,6 +10,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/education
     username: postgres
     password: admin
+  liquibase:
+    change-log: classpath:liquibase/changelog.yaml
   jpa:
     hibernate:
       ddl-auto: validate

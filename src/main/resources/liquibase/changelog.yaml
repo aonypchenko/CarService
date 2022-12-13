@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - changeSet:
+      id: DEV-1
+      author: artem
+      changes:
